@@ -1,49 +1,8 @@
-
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-* {
-    margin: 0;
-    padding: 0;
-}
-
-html, body {
-    width: 100%;
-    background: #000;
-    overflow-x: hidden;
-    overflow-y: auto;
-}
-
-img {
-    display: block;
-    height: auto;
-    max-width: none;
-}
+* { margin: 0; padding: 0; }
+body { background: black; overflow-x: hidden; }
+img { display: block; width: 100%; height: auto; }
 </style>
-</head>
-<body>
 
-<img src="chajiyu.png" alt="">
-<img src="chajiyu%202.png" alt="">
-
-<script>
-const ratio = window.devicePixelRatio || 1;
-
-document.querySelectorAll("img").forEach(img => {
-    const setSize = () => {
-        img.style.width = (img.naturalWidth / ratio) + "px";
-    };
-
-    if (img.complete) {
-        setSize();
-    } else {
-        img.onload = setSize;
-    }
-});
-</script>
-
-</body>
-</html>
+<img src="chajiyu.png">
+<img src="chajiyu%202.png">
