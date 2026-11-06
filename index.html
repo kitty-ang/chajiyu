@@ -3,8 +3,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 * {
     margin: 0;
@@ -13,7 +12,6 @@
 
 html, body {
     width: 100%;
-    min-height: 100%;
     background: #000;
     overflow-x: hidden;
     overflow-y: auto;
@@ -21,15 +19,31 @@ html, body {
 
 img {
     display: block;
-    width: auto;
     height: auto;
     max-width: none;
 }
 </style>
 </head>
-
 <body>
+
 <img src="chajiyu.png" alt="">
 <img src="chajiyu%202.png" alt="">
+
+<script>
+const ratio = window.devicePixelRatio || 1;
+
+document.querySelectorAll("img").forEach(img => {
+    const setSize = () => {
+        img.style.width = (img.naturalWidth / ratio) + "px";
+    };
+
+    if (img.complete) {
+        setSize();
+    } else {
+        img.onload = setSize;
+    }
+});
+</script>
+
 </body>
 </html>
